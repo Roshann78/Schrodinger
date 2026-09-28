@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Schrodinger Portfolio
 
-## Getting Started
+This is a personal portfolio and resume website built with Next.js (App Router, TypeScript) and Tailwind CSS. It is configured to output a fully static site.
 
-First, run the development server:
+## How to Edit Your Content
+
+All of your portfolio content—including your header, education, skills, experience, projects, achievements, positions of responsibility, and sidebar resource links—is stored in a single, strongly-typed file:
+
+`data/resume.ts`
+
+Simply open `data/resume.ts` and modify the properties. Your changes will immediately reflect on the site.
+
+- **To add a new project**: Add a new object to the `projects` array.
+- **To update a link**: Find the specific string or URL inside the relevant object and change it. (Make sure to update the placeholder `TODO` URLs!).
+- **To add new sidebar resources**: Add new objects to the `resources` array.
+
+## Running Locally
+
+To run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Building for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To build the static site (output will be in the `/out` directory):
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+```
