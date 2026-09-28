@@ -1,4 +1,4 @@
-export const BASE_DOMAIN = "yourdomain.xyz";
+export const BASE_DOMAIN = "roshansharma.tech";
 
 export const resume = {
   header: {

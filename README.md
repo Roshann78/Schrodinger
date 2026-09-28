@@ -31,3 +31,10 @@ To build the static site (output will be in the `/out` directory):
 ```bash
 npm run build
 ```
+
+## Deployment
+
+This site is configured for automatic deployment to GitHub Pages using GitHub Actions. 
+- A custom domain is configured in `public/CNAME`.
+- On every push to the `main` branch, the Next.js site is built and exported statically to the `/out` directory.
+- GitHub Actions then deploys the `/out` contents directly to GitHub Pages.
