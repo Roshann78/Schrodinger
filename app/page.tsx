@@ -27,25 +27,16 @@ export default function Home() {
           </div>
         </header>
 
-        <Section title="Education">
-          <div className="space-y-6">
-            {resume.education.map((edu, i) => (
-              <div key={i} className="flex flex-col md:flex-row md:justify-between items-start md:items-baseline gap-1">
-                <div>
-                  <h3 className="text-lg font-medium text-black dark:text-white">{edu.degree}</h3>
-                  <p className="text-gray-600 dark:text-gray-400">{edu.institution}, {edu.location} - {edu.score}</p>
-                </div>
-                <span className="text-gray-500 text-sm whitespace-nowrap">{edu.period}</span>
-              </div>
-            ))}
-          </div>
-        </Section>
-
-        <Section title="Technical Skills">
-          <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-            {resume.skills.map((skill, i) => (
+        <Section title="Achievements">
+          <ul className="list-disc list-outside ml-5 space-y-2 text-gray-700 dark:text-gray-300">
+            {resume.achievements.map((ach, i) => (
               <li key={i}>
-                <strong className="text-black dark:text-white font-medium">{skill.category}:</strong> {skill.items}
+                {ach.text}
+                {ach.link && (
+                  <span className="ml-2">
+                    (<Link href={ach.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">Link</Link>)
+                  </span>
+                )}
               </li>
             ))}
           </ul>
@@ -93,16 +84,11 @@ export default function Home() {
           </div>
         </Section>
 
-        <Section title="Achievements">
-          <ul className="list-disc list-outside ml-5 space-y-2 text-gray-700 dark:text-gray-300">
-            {resume.achievements.map((ach, i) => (
+        <Section title="Technical Skills">
+          <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+            {resume.skills.map((skill, i) => (
               <li key={i}>
-                {ach.text}
-                {ach.link && (
-                  <span className="ml-2">
-                    (<Link href={ach.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">Link</Link>)
-                  </span>
-                )}
+                <strong className="text-black dark:text-white font-medium">{skill.category}:</strong> {skill.items}
               </li>
             ))}
           </ul>
@@ -124,6 +110,20 @@ export default function Home() {
                     <li key={j}>{detail}</li>
                   ))}
                 </ul>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        <Section title="Education">
+          <div className="space-y-6">
+            {resume.education.map((edu, i) => (
+              <div key={i} className="flex flex-col md:flex-row md:justify-between items-start md:items-baseline gap-1">
+                <div>
+                  <h3 className="text-lg font-medium text-black dark:text-white">{edu.degree}</h3>
+                  <p className="text-gray-600 dark:text-gray-400">{edu.institution}, {edu.location} - {edu.score}</p>
+                </div>
+                <span className="text-gray-500 text-sm whitespace-nowrap">{edu.period}</span>
               </div>
             ))}
           </div>
