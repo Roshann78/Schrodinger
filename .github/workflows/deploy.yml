@@ -29,8 +29,6 @@ jobs:
         run: npm ci
       - name: Build Next.js site
         run: npm run build
-        env:
-          BASE_PATH: /Schrodinger
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
